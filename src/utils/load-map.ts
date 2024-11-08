@@ -1,4 +1,5 @@
 import L, { type Map, Layer } from 'leaflet'
+import markerIcon from '@/../node_modules/leaflet/dist/images/marker-icon.png'
 
 let map: Map
 let layer: Layer
@@ -11,6 +12,12 @@ export const loadMap = () => {
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
   }).addTo(map)
+
+  L.Marker.prototype.setIcon(
+    L.icon({
+      iconUrl: markerIcon,
+    }),
+  )
 }
 
 export const setMarker = (latLong: { lat: number; lng: number }) => {
