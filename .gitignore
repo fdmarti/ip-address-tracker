@@ -30,5 +30,5 @@ coverage
 *.tsbuildinfo
 .env
 
-.vitest.config
-.tests
+vitest.config
+tests
